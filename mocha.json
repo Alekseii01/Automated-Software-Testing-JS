@@ -1,0 +1,12 @@
+{
+    "reporterEnabled": "mochawesome",
+    "mochawesomeReporterOptions": {
+      "reportDir": "reports/assets",
+      "reportFilename": "test-report",
+      "quiet": true,
+      "overwrite": true,
+      "html": true,
+      "json": true
+    }
+  }
+  
