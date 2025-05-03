@@ -1,5 +1,5 @@
 import { expect } from 'chai';
-import { filterUsersByAge, sortUsersByName, findUserById, isEmailTaken, } from '../src/usersListUtils.js';
+import { filterUsersByAge, sortUsersByName, findUserById, isEmailTaken } from '../src/usersListUtils.js';
 
 const sampleUsers = [
   { id: 1, name: 'Alice', age: 25, email: 'alice@example.com' },
