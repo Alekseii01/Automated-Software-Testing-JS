@@ -1,32 +1,28 @@
 import { expect } from "chai";
-import { add, subtract, multiply, divide } from "../src/mathUtils.js";
+import { checkStudentKnowledge } from "../src/studentKnowledgeCheckerUtil.js";
 
-describe("Math Utils", () => {
-  describe("add", () => {
-    it("should add two numbers", () => {
-      expect(add(2, 3)).to.equal(5);
-    });
+describe("Student Knowledge Checker", () => {
+  it("should return true when all answers are correct", () => {
+    const studentAnswers = { question1: "A", question2: "B" };
+    const correctAnswers = { question1: "A", question2: "B" };
+    expect(checkStudentKnowledge(studentAnswers, correctAnswers)).to.be.true;
   });
 
-  describe("subtract", () => {
-    it("should subtract two numbers", () => {
-      expect(subtract(5, 3)).to.equal(2);
-    });
+  it("should return false when one answer is incorrect", () => {
+    const studentAnswers = { question1: "A", question2: "B" };
+    const correctAnswers = { question1: "A", question2: "C" };
+    expect(checkStudentKnowledge(studentAnswers, correctAnswers)).to.be.false;
   });
 
-  describe("multiply", () => {
-    it("should multiply two numbers", () => {
-      expect(multiply(2, 3)).to.equal(6);
-    });
+  it("should return false when keys are different", () => {
+    const studentAnswers = { question1: "A", question3: "B" };
+    const correctAnswers = { question1: "A", question2: "B" };
+    expect(checkStudentKnowledge(studentAnswers, correctAnswers)).to.be.false;
   });
 
-  describe("divide", () => {
-    it("should divide two numbers", () => {
-      expect(divide(6, 3)).to.equal(2);
-    });
-
-    it("should throw error when dividing by zero", () => {
-      expect(() => divide(1, 0)).to.throw("Cannot divide by zero");
-    });
+  it("should return false when number of answers is different", () => {
+    const studentAnswers = { question1: "A" };
+    const correctAnswers = { question1: "A", question2: "B" };
+    expect(checkStudentKnowledge(studentAnswers, correctAnswers)).to.be.false;
   });
 });

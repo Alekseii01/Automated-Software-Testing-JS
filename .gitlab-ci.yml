@@ -1,13 +1,8 @@
 stages:
   - lint
 
-eslint_check:
-  stage: lint
-  image: node:18
-  script:
-    - npm install
-    - npx eslint src/ test/
-  only:
-    - merge_requests
-    - main
-    - master
+  lint:
+    stage: lint
+    script:
+      - npm install
+      - npx eslint
