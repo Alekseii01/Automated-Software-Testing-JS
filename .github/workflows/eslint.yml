@@ -4,11 +4,12 @@ on:
   push:
     branches:
       - main
+      - unit_tests
 
   pull_request:
     branches:
       - main
-
+      - unit_tests
 jobs:
   eslint:
     name: Run ESLint
