@@ -1,0 +1,48 @@
+# Node modules
+node_modules/
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Runtime data
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# Dependency directories
+jspm_packages/
+
+# Optional npm cache directory
+.npm
+
+# Optional eslint cache
+.eslintcache
+
+# dotenv environment files
+.env
+.env.test
+.env.local
+
+# Testing coverage and reports
+coverage/
+nyc_output/
+mochawesome-report/
+reports/
+
+# VSCode settings
+.vscode/
+
+# Mac system files
+.DS_Store
+
+# Build output
+dist/
+build/
+
+# OS-specific
+Thumbs.db
