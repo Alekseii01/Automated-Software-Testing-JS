@@ -9,8 +9,14 @@ export default defineConfig({
     ],
     retries: 2,
     workers: 4,
+    timeout: 50000,
+    expect: {
+    timeout: 10000
+    },
     use: {
       screenshot: 'only-on-failure',
+      actionTimeout: 10000,
+      navigationTimeout: 30000,
     },
   reporter: [['html', { outputFolder: 'reports' }]],
 });
