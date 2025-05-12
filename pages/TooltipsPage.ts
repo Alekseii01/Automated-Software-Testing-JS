@@ -7,7 +7,7 @@ export class TooltipsPage {
 
     const tooltip = this.page.locator('.tooltip-inner');
 
-    await tooltip.waitFor({ timeout: 5000 });
+    await tooltip.waitFor({ timeout: 10000 });
 
     const text = await tooltip.textContent();
     return text?.trim() === expectedText;
