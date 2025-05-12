@@ -1,0 +1,26 @@
+{
+  "name": "automated-software-testing-js",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Alekseii01/Automated-Software-Testing-JS.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Alekseii01/Automated-Software-Testing-JS/issues"
+  },
+  "homepage": "https://github.com/Alekseii01/Automated-Software-Testing-JS#readme",
+  "devDependencies": {
+    "playwright": "^1.52.0"
+  },
+  "dependencies": {
+    "@playwright/test": "^1.52.0"
+  }
+}
