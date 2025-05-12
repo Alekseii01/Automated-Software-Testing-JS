@@ -4,11 +4,24 @@ import { AlertsPage } from '../pages/AlertsPage';
 test.describe('Alerts Page Tests', () => {
   test('Check all alerts', async ({ page }) => {
     const alertsPage = new AlertsPage(page);
-    await page.goto('https://demoqa.com/alerts');
 
+    // Увеличенный таймаут и более стабильный тип загрузки
+    await page.goto('https://demoqa.com/alerts', {
+      timeout: 60000,
+      waitUntil: 'domcontentloaded',
+    });
+
+    // Явные ожидания, чтобы убедиться, что элементы действительно появились
+    await page.waitForSelector('#alertButton', { timeout: 10000 });
     await alertsPage.clickAlertButton();
+
+    await page.waitForSelector('#timerAlertButton', { timeout: 10000 });
     await alertsPage.clickTimerAlertButton();
+
+    await page.waitForSelector('#confirmButton', { timeout: 10000 });
     await alertsPage.clickConfirmButton();
+
+    await page.waitForSelector('#promtButton', { timeout: 10000 });
     await alertsPage.clickPromptButton();
   });
 });
