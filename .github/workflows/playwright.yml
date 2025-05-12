@@ -30,7 +30,7 @@ jobs:
       run: npx playwright test
 
     - name: Upload reports
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v3.1.1
       with:
         name: playwright-report
         path: reports
