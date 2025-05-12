@@ -6,7 +6,7 @@ export class TooltipsPage {
     await this.page.hover(selector);
 
     const tooltip = this.page.locator('.tooltip-inner');
-
+    await this.page.waitForTimeout(500);
     await tooltip.waitFor({ timeout: 20000 });
 
     const text = await tooltip.textContent();
