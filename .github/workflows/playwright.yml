@@ -35,5 +35,5 @@ jobs:
     - name: Upload reports
       uses: actions/upload-artifact@v4
       with:
-        name: playwright-report
+        name: playwright-report-${{ matrix.browser }}-${{ github.run_id }}
         path: reports
