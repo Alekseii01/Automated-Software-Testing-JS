@@ -32,9 +32,6 @@ jobs:
     - name: Run Playwright tests
       run: npx playwright test
 
-    - name: Check page availability
-      run: curl -I https://demoqa.com/text-box
-
     - name: Upload reports
       uses: actions/upload-artifact@v4
       with:
