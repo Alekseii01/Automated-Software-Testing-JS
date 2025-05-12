@@ -30,10 +30,15 @@ jobs:
       run: npx playwright install
 
     - name: Run Playwright tests
-      run: npx playwright test
+      run: |
+        if [ "${{ matrix.browser }}" == "chrome" ]; then
+          npx playwright test --project=Chrome@1920x1080
+        elif [ "${{ matrix.browser }}" == "firefox" ]; then
+          npx playwright test --project=Firefox@1920x1080
+        fi
 
     - name: Upload reports
       uses: actions/upload-artifact@v4
       with:
-        name: playwright-report-${{ matrix.browser }}-${{ github.run_id }}
+        name: playwright-report-${{ matrix.browser }}
         path: reports
