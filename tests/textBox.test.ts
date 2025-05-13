@@ -3,7 +3,7 @@ import { TextBoxPage } from '../pages/TextBoxPage';
 
 test('Fill text box with random data and check result', async ({ page }) => {
   const textBoxPage = new TextBoxPage(page);
-  await page.goto('https://demoqa.com/text-box');
+  await page.goto('https://demoqa.com/text-box', { waitUntil: 'load' });
 
   const randomName = `User${Math.floor(Math.random() * 1000)}`;
   const randomEmail = `user${Date.now()}@test.com`;
