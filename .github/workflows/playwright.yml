@@ -32,9 +32,9 @@ jobs:
     - name: Run Playwright tests
       run: |
         if [ "${{ matrix.browser }}" == "chrome" ]; then
-          npx playwright test --project=Chrome@1920x1080
+          npm run test:chrome
         elif [ "${{ matrix.browser }}" == "firefox" ]; then
-          npx playwright test --project=Firefox@1920x1080
+          npm run test:firefox
         fi
 
     - name: Upload reports
