@@ -1,33 +1,30 @@
 {
-  "name": "automated_testing",
+  "name": "automated-software-testing-js",
   "version": "1.0.0",
-  "type": "module",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "lint": "eslint .",
-    "test": "mocha --reporter mochawesome",
-    "coverage": "c8 --reporter=html --reporter=text mocha",
-    "prepare": "husky install"
+    "test:chrome": "npx playwright test --project=Chrome@1920x1080 --project=Chrome@1366x768",
+    "test:firefox": "npx playwright test --project=Firefox@1920x1080 --project=Firefox@1366x768",
+    "test:both": "npx playwright test --project=Chrome@1920x1080 --project=Firefox@1920x1080",
+    "test:reports": "npx playwright show-report --port=$(node -e \"const crypto = require('crypto'); console.log(crypto.randomInt(1024, 65535));\") reports"
   },
-  "lint-staged": {
-    "*.js": "npm run lint"
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Alekseii01/Automated-Software-Testing-JS.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Alekseii01/Automated-Software-Testing-JS/issues"
+  },
+  "homepage": "https://github.com/Alekseii01/Automated-Software-Testing-JS#readme",
   "devDependencies": {
-    "@babel/core": "^7.26.10",
-    "@babel/preset-env": "^7.26.9",
-    "@eslint/js": "^9.25.1",
-    "babel-eslint": "^10.1.0",
-    "c8": "^10.1.3",
-    "chai": "^5.2.0",
-    "eslint": "^9.25.1",
-    "globals": "^16.0.0",
-    "husky": "^8.0.3",
-    "lint-staged": "^15.5.1",
-    "mocha": "^11.1.0",
-    "mochawesome": "^7.1.3"
+    "playwright": "^1.52.0"
+  },
+  "dependencies": {
+    "@playwright/test": "^1.52.0",
+    "random-port": "^0.1.0"
   }
 }
