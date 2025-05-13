@@ -45,21 +45,21 @@ Before running the tests, ensure that the following tools are installed:
 To run the tests locally in Chrome and Firefox, use the following command:
 
 ```bash
-npx playwright test
+npm run test:both
 ```
 
 To run only for a specific one:
 
 ```bash
-npx playwright test --project=Chrome@1920x1080
+npm run test:chrome
 ```
 or
 ```bash
-npx playwright test --project=Chrome@1366x768
+npm run test:firefox
 ```
 
 To open HTML report run:
 
 ```bash
-npx playwright show-report reports
+npm run test:reports
 ```
