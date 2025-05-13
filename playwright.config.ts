@@ -8,7 +8,7 @@ export default defineConfig({
         { name: 'Firefox@1366x768', use: { browserName: 'firefox', viewport: { width: 1366, height: 768 } } },
     ],
     retries: 2,
-    workers: 2,
+    workers: 10,
     timeout: 50000,
     expect: {
     timeout: 10000
