@@ -20,19 +20,13 @@ Before running the tests, ensure that the following tools are installed:
     cd Automated-Software-Testing-JS
     ```
 
-2. Switch to the demoqa-tests branch:
-
-    ```bash
-    git checkout demoqa-tests
-    ```
-
-3. Install the necessary dependencies:
+2. Install the necessary dependencies:
 
     ```bash
     npm install
     ```
 
-4. Install Playwright and the necessary browser binaries:
+3. Install Playwright and the necessary browser binaries:
 
     ```bash
     npx playwright install
