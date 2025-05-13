@@ -4,7 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "playwright test"
+    "test:chrome": "npx playwright test --project=Chrome@1920x1080 --project=Chrome@1366x768",
+    "test:firefox": "npx playwright test --project=Firefox@1920x1080 --project=Firefox@1366x768",
+    "test:both": "npx playwright test --project=Chrome@1920x1080 --project=Firefox@1920x1080",
+    "test:reports": "npx playwright show-report --port=$(node -e \"const crypto = require('crypto'); console.log(crypto.randomInt(1024, 65535));\") reports"
   },
   "repository": {
     "type": "git",
@@ -21,6 +24,7 @@
     "playwright": "^1.52.0"
   },
   "dependencies": {
-    "@playwright/test": "^1.52.0"
+    "@playwright/test": "^1.52.0",
+    "random-port": "^0.1.0"
   }
 }
