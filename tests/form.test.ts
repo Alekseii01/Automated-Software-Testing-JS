@@ -1,7 +1,10 @@
 import { test } from '@playwright/test';
 import { FormPage } from '../pages/FormPage';
+import { blockAds } from '../utils/ad-blocker';
 
 test('Fill form and check result', async ({ page }) => {
+  await blockAds(page);
+
   const formPage = new FormPage(page);
   await page.goto('https://demoqa.com/automation-practice-form', { waitUntil: 'load' });
 

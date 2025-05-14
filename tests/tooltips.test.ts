@@ -1,7 +1,9 @@
 import { test, expect } from '@playwright/test';
 import { TooltipsPage } from '../pages/TooltipsPage';
+import { blockAds } from '../utils/ad-blocker';
 
 test('Check all tooltips', async ({ page }) => {
+  await blockAds(page);
   const tooltipsPage = new TooltipsPage(page);
   await page.goto('https://demoqa.com/tool-tips', { waitUntil: 'load' });
 

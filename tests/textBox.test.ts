@@ -1,7 +1,9 @@
 import { test } from '@playwright/test';
 import { TextBoxPage } from '../pages/TextBoxPage';
+import { blockAds } from '../utils/ad-blocker';
 
 test('Fill text box with random data and check result', async ({ page }) => {
+  await blockAds(page);
   const textBoxPage = new TextBoxPage(page);
   await page.goto('https://demoqa.com/text-box', { waitUntil: 'load' });
 
