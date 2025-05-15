@@ -7,7 +7,14 @@ export class TooltipsPage {
     await this.page.locator(selector).scrollIntoViewIfNeeded();
     await this.page.hover(selector, { force: true });
 
-    const tooltipId = selector === '#toolTipButton' ? '#buttonToolTip' : '#textFieldToolTip';
+    const tooltipMap: Record<string, string> = {
+      '#toolTipButton': '#buttonToolTip',
+      '#toolTipTextField': '#textFieldToolTip',
+      '#texToolTopContainer a:nth-child(1)': '#contraryTexToolTip',
+      '#texToolTopContainer a:nth-child(2)': '#sectionToolTip',
+    };
+
+    const tooltipId = tooltipMap[selector];
     const tooltip = this.page.locator(`${tooltipId} .tooltip-inner`);
 
     await tooltip.waitFor({ state: 'visible', timeout: 15000 });
