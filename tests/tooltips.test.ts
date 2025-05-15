@@ -12,4 +12,10 @@ test('Check all tooltips', async ({ page }) => {
 
   const isTextFieldTooltipValid = await tooltipsPage.hoverAndCheckTooltip('#toolTipTextField', 'You hovered over the text field');
   expect(isTextFieldTooltipValid).toBe(true);
+
+  const isContraryTooltipValid = await tooltipsPage.hoverAndCheckTooltip('#texToolTopContainer a:nth-child(1)', 'You hovered over the Contrary');
+  expect(isContraryTooltipValid).toBe(true);
+
+  const isSectionTooltipValid = await tooltipsPage.hoverAndCheckTooltip('#texToolTopContainer a:nth-child(2)', 'You hovered over the 1.10.32');
+  expect(isSectionTooltipValid).toBe(true);
 });
