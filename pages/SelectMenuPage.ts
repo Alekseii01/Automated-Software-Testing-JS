@@ -7,6 +7,7 @@ export class SelectMenuPage {
     await this.page.click('#selectOne');
     await this.page.locator('.css-26l3qy-menu').locator('text=Other').click();
     await this.page.selectOption('#oldSelectMenu', 'Green');
+    await this.page.selectOption('#oldSelectMenu', 'Blue');
 
     const options = await this.page.locator('#cars option').allTextContents();
 
