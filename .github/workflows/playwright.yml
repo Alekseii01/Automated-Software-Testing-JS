@@ -17,7 +17,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        browser: [chrome, firefox]
+        browser: [chrome, firefox, cucumber]
 
     steps:
     - name: Checkout repository
@@ -29,18 +29,26 @@ jobs:
     - name: Install browsers for Playwright
       run: npx playwright install
 
-    - name: Run Playwright tests
+    - name: Run tests
       run: |
         if [ "${{ matrix.browser }}" == "chrome" ]; then
           npm run test:chrome
         elif [ "${{ matrix.browser }}" == "firefox" ]; then
           npm run test:firefox
-    
-    - name: Run Cucumber tests
-      run: npm run test:cucumber
+        elif [ "${{ matrix.browser }}" == "cucumber" ]; then
+          xvfb-run -a npm run test:cucumber
+        fi
 
     - name: Upload reports
+      if: matrix.browser != 'cucumber'
       uses: actions/upload-artifact@v4
       with:
         name: playwright-report-${{ matrix.browser }}
         path: reports
+
+    - name: Upload Cucumber reports
+      if: matrix.browser == 'cucumber'
+      uses: actions/upload-artifact@v4
+      with:
+        name: cucumber-report
+        path: reports/cucumber-report.html
