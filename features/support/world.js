@@ -1,23 +1,15 @@
-const { setWorldConstructor, World } = require('@cucumber/cucumber');
-const { chromium } = require('@playwright/test');
+const { setWorldConstructor } = require('@cucumber/cucumber');
+const { chromium } = require('playwright');
 
-class CustomWorld extends World {
-  constructor(options) {
-    super(options);
-  }
-
+class CustomWorld {
   async init() {
-    this.browser = await chromium.launch({
-      headless: false
-    });
-    const context = await this.browser.newContext();
-    this.page = await context.newPage();
+    this.browser = await chromium.launch({ headless: false });
+    this.context = await this.browser.newContext();
+    this.page = await this.context.newPage();
   }
 
   async close() {
-    if (this.browser) {
-      await this.browser.close();
-    }
+    await this.browser.close();
   }
 }
 
