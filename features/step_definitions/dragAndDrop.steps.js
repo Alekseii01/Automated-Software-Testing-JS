@@ -8,7 +8,6 @@ Given('I am on the droppable page', async function() {
 });
 
 When('I drag the element to the drop target', async function() {
-  // Ждем загрузки элементов
   await this.page.waitForSelector('#draggable');
   await this.page.waitForSelector('#simpleDropContainer #droppable');
   
@@ -18,7 +17,6 @@ When('I drag the element to the drop target', async function() {
   const sourceBound = await sourceElement.boundingBox();
   const targetBound = await targetElement.boundingBox();
   
-  // Перетаскивание элемента в центр целевого элемента
   await this.page.mouse.move(
     sourceBound.x + sourceBound.width / 2,
     sourceBound.y + sourceBound.height / 2
@@ -33,6 +31,5 @@ When('I drag the element to the drop target', async function() {
 
 Then('the drop target should display {string}', async function(expectedText) {
   const dropTargetText = await this.page.locator('#simpleDropContainer #droppable > p').innerText();
-  // Проверяем, что текст начинается с ожидаемого значения
   expect(dropTargetText.startsWith(expectedText)).toBeTruthy();
 }); 

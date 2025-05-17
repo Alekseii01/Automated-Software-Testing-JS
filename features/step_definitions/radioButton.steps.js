@@ -8,7 +8,6 @@ Given('I am on the radio button page', async function() {
 });
 
 When('I select the {string} radio button', async function(option) {
-  // На DemoQA странице с радиокнопками нельзя прямо кликнуть по input, нужно использовать label
   const radioLabelSelector = `//label[text()="${option}"]`;
   await this.page.locator(radioLabelSelector).click();
 });

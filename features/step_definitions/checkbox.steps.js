@@ -8,18 +8,15 @@ Given('I am on the checkbox page', async function() {
 });
 
 When('I expand all checkboxes', async function() {
-  // Клик на кнопку раскрытия всего дерева
   await this.page.click('.rct-option-expand-all');
 });
 
 When('I select the {string} checkbox', async function(checkboxName) {
-  // Поиск и клик на нужный чекбокс по тексту лейбла
   const checkboxSelector = `//span[text()="${checkboxName}"]/ancestor::label//span[@class="rct-checkbox"]`;
   await this.page.locator(checkboxSelector).click();
 });
 
 Then('the {string} checkbox should be checked', async function(checkboxName) {
-  // Проверка, что чекбокс отмечен (через текст в результате)
   const resultSelector = '.display-result';
   await this.page.waitForSelector(resultSelector);
   
