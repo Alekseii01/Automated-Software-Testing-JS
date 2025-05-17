@@ -1,6 +1,6 @@
 # Automated-Software-Testing-JS
 
-This project implements automated testing using Playwright.
+This project implements automated testing using Playwright and testing implemented by BDD methology with Cucumber framework
 
 ## Project Setup
 
@@ -40,7 +40,7 @@ Before running the tests, ensure that the following tools are installed:
 
 ## Running Tests
 
-### Running Locally
+### Running Locally Playwright tests:
 
 To run the tests locally in Chrome and Firefox, use the following command:
 
@@ -62,4 +62,12 @@ To open HTML report run:
 
 ```bash
 npm run test:reports
+```
+
+### Running Locally Cucumber tests:
+
+To run the tests locally use the following command:
+
+```bash
+npm run test:cucumber
 ```
