@@ -26,17 +26,16 @@ jobs:
     - name: Install dependencies
       run: npm ci
 
-    - name: Install browsers for Playwright
-      run: npx playwright install
-
     - name: Run Playwright tests
       run: |
         if [ "${{ matrix.browser }}" == "chrome" ]; then
+          npx playwright install
           npm run test:chrome
         elif [ "${{ matrix.browser }}" == "firefox" ]; then
+          npx playwright install
           npm run test:firefox
         elif [ "${{ matrix.browser }}" == "cucumber" ]; then
-          npm run test:cucumber
+          xvfb-run -a npm run test:cucumber
         fi
 
     - name: Upload reports
