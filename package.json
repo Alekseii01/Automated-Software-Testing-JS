@@ -7,7 +7,13 @@
     "test:chrome": "npx playwright test --project=Chrome@1920x1080 --project=Chrome@1366x768",
     "test:firefox": "npx playwright test --project=Firefox@1920x1080 --project=Firefox@1366x768",
     "test:both": "npx playwright test --project=Chrome@1920x1080 --project=Firefox@1920x1080 --project=Chrome@1366x768 --project=Firefox@1366x768",
-    "test:reports": "npx playwright show-report --port=$(node -e \"const crypto = require('crypto'); console.log(crypto.randomInt(1024, 65535));\") reports"
+    "test:reports": "npx playwright show-report --port=$(node -e \"const crypto = require('crypto'); console.log(crypto.randomInt(1024, 65535));\") reports",
+    "cucumber": "cucumber-js",
+    "cucumber:date": "cucumber-js features/datePicker.feature",
+    "cucumber:slider": "cucumber-js features/slider.feature",
+    "cucumber:checkbox": "cucumber-js features/checkbox.feature",
+    "cucumber:radio": "cucumber-js features/radioButton.feature",
+    "cucumber:dnd": "cucumber-js features/dragAndDrop.feature"
   },
   "repository": {
     "type": "git",
@@ -21,6 +27,8 @@
   },
   "homepage": "https://github.com/Alekseii01/Automated-Software-Testing-JS#readme",
   "devDependencies": {
+    "@babel/register": "^7.27.1",
+    "@cucumber/cucumber": "^11.3.0",
     "playwright": "^1.52.0"
   },
   "dependencies": {
