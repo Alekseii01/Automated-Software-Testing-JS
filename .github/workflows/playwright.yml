@@ -35,7 +35,9 @@ jobs:
           npm run test:chrome
         elif [ "${{ matrix.browser }}" == "firefox" ]; then
           npm run test:firefox
-        fi
+    
+    - name: Run Cucumber tests
+      run: npm run test:cucumber
 
     - name: Upload reports
       uses: actions/upload-artifact@v4
