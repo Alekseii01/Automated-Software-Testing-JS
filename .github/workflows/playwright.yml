@@ -29,16 +29,18 @@ jobs:
     - name: Install browsers for Playwright
       run: npx playwright install
 
+    - name: Run Сucumber tests
+      run: |
+        sudo apt-get install xvfb
+        xvfb-run --auto-servernum --server-args="-screen 0 1920x1080x24" npm run test:cucumber
+
     - name: Run Playwright tests
       run: |
         if [ "${{ matrix.browser }}" == "chrome" ]; then
-          npm run test:chrome
+          xvfb-run --auto-servernum --server-args="-screen 0 1920x1080x24" npm run test:chrome
         elif [ "${{ matrix.browser }}" == "firefox" ]; then
-          npm run test:firefox
+          xvfb-run --auto-servernum --server-args="-screen 0 1920x1080x24" npm run test:firefox
         fi
-    
-    - name: Run Cucumber tests
-      run: npm run test:cucumber
 
     - name: Upload reports
       uses: actions/upload-artifact@v4
