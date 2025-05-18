@@ -12,7 +12,7 @@ When('I select the date {string}', async function(dateString) {
   const day = targetDate.getDate().toString();
   const month = targetDate.getMonth(); // 0-11
   const year = targetDate.getFullYear().toString();
-
+//TODO create function fillDataAnd remove to the pageObject
   await this.page.click('#datePickerMonthYearInput');
   await this.page.selectOption('.react-datepicker__month-select', month.toString());
   await this.page.selectOption('.react-datepicker__year-select', year);
