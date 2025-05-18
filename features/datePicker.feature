@@ -6,4 +6,4 @@ Feature: Date Picker
   Scenario: Selecting a specific date
     Given I am on the date picker page
     When I select the date "2025-03-15"
-    Then the selected date should be displayed as "03/15/2025" 
+    Then the selected date should be displayed as "03/15/2025"

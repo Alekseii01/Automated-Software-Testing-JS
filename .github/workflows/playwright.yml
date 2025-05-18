@@ -5,6 +5,7 @@ on:
     branches:
       - main
       - demoqa-tests
+      - feat-revision
   pull_request:
     branches:
       - main

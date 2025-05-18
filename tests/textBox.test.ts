@@ -1,7 +1,7 @@
 import { test } from '@playwright/test';
 import { TextBoxPage } from '../pages/TextBoxPage';
 import { blockAds } from '../utils/ad-blocker';
-
+//TODO Checks missed
 test('Fill text box with random data and check result', async ({ page }) => {
   await blockAds(page);
   const textBoxPage = new TextBoxPage(page);
