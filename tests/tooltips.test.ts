@@ -2,6 +2,7 @@ import { test, expect } from '@playwright/test';
 import { TooltipsPage } from '../pages/TooltipsPage';
 import { blockAds } from '../utils/ad-blocker';
 
+// TODO Remove all locators to the constructor in TooltipsPage.ts
 test('Check all tooltips', async ({ page }) => {
   await blockAds(page);
   const tooltipsPage = new TooltipsPage(page);

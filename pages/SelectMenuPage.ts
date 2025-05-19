@@ -2,7 +2,6 @@ import { Page } from 'playwright';
 
 export class SelectMenuPage {
   constructor(private page: Page) {}
-
   private get selectValueDropdown() { return this.page.locator('#withOptGroup'); }
   private get selectValueMenu() { return this.page.locator('.css-26l3qy-menu'); }
   private get selectOneDropdown() { return this.page.locator('#selectOne'); }

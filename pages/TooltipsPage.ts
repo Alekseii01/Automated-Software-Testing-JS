@@ -2,7 +2,7 @@ import { Page } from '@playwright/test';
 
 export class TooltipsPage {
   constructor(private page: Page) {}
-
+//TODO remove all locators to the constructor. Separate hover and check text function
   async hoverAndCheckTooltip(selector: string, expectedText: string): Promise<boolean> {
     await this.page.locator(selector).scrollIntoViewIfNeeded();
     await this.page.hover(selector, { force: true });
