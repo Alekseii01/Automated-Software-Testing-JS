@@ -1,0 +1,6 @@
+{
+  "radioOptions": [
+    { "option": "Yes", "expected": "Yes" },
+    { "option": "Impressive", "expected": "Impressive" }
+  ]
+} 

@@ -1,0 +1,9 @@
+{
+  "checkboxes": [
+    { "checkbox": "Desktop" },
+    { "checkbox": "Documents" },
+    { "checkbox": "Downloads" },
+    { "checkbox": "Office" },
+    { "checkbox": "WorkSpace" }
+  ]
+} 

@@ -68,7 +68,7 @@ npm run test:cucumber
 ## 05 19 Revision
 TODO: 
 * Parallel test execution (parametrize launching t is better to not hardcode configurations in environment files for every test scenario. Instead, use a flexible approach where you can dynamically select the browser, resolution, and other options at runtime via the command line. Whether you run tests in one go or separately depends on your project requirements and the capabilities of your testing framework. for example:  npm run test -- --browser=chrome --resolution=1920x1080 )
-* add for BDD scenarios tags 
+✅ add for BDD scenarios tags 
 * Test Data Separation: Test data is not stored in a separate file or folder. It should be externalized to improve maintainability.
 * Locator Encapsulation: Locators are not fully encapsulated within the page object files. They should not appear in the test files.
 * Encapsulation: Some tests directly interact with web elements instead of using methods from the page object classes. This violates the encapsulation principle of the POM pattern.
