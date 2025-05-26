@@ -6,7 +6,7 @@ Feature: Radio Buttons
 
   @select
   Scenario Outline: Selecting radio buttons
-    Given I am on the radio button page
+    Given I navigate to the "radio button" page
     When I select the "<option>" radio button
     Then the text "<expected>" should be displayed in the result
 

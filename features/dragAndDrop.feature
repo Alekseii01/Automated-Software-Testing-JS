@@ -7,6 +7,6 @@ Feature: Drag and Drop
 
   @drag
   Scenario: Dragging an element to a drop target
-    Given I am on the droppable page
+    Given I navigate to the "droppable" page
     When I drag the element to the drop target
     Then the drop target should display "Dropped!"

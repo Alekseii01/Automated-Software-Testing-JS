@@ -7,7 +7,7 @@ Feature: Slider
 
   @move
   Scenario Outline: Moving slider to a specific value
-    Given I am on the slider page
+    Given I navigate to the "slider" page
     When I move the slider to <value>
     Then the slider value should be <value> with a tolerance of <tolerance>
 

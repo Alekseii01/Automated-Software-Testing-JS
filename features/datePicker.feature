@@ -7,7 +7,7 @@ Feature: Date Picker
 
   @select
   Scenario Outline: Selecting a specific date
-    Given I am on the date picker page
+    Given I navigate to the "date picker" page
     When I select the date "<date>"
     Then the selected date should be displayed as "<expected>"
 

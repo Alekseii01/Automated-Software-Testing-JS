@@ -6,7 +6,7 @@ Feature: Checkboxes
 
   @select
   Scenario Outline: Selecting a checkbox
-    Given I am on the checkbox page
+    Given I navigate to the "checkbox" page
     When I expand all checkboxes
     And I select the "<checkbox>" checkbox
     Then the "<checkbox>" checkbox should be checked
@@ -21,7 +21,7 @@ Feature: Checkboxes
 
   @multiple @select
   Scenario: Selecting multiple checkboxes
-    Given I am on the checkbox page
+    Given I navigate to the "checkbox" page
     When I expand all checkboxes
     And I select the "Desktop" checkbox
     And I select the "Documents" checkbox
