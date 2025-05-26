@@ -57,14 +57,9 @@ npm run test:webkit
 Run tests with custom browser and resolution parameters:
 
 ```bash
-# Chrome with custom resolution
 npm run test -- --browser=chromium --resolution=1920x1080
 
-# Firefox with custom resolution
 npm run test -- --browser=firefox --resolution=1366x768
-
-# Webkit with custom resolution
-npm run test -- --browser=webkit --resolution=1280x720
 ```
 
 
