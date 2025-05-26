@@ -4,7 +4,7 @@ const browser = process.env.BROWSER || 'chromium';
 const resolution = process.env.RESOLUTION || '1280x720';
 const [width, height] = resolution.split('x').map(Number);
 const headless = process.env.HEADLESS !== 'false';
-const workers = process.env.WORKERS ? 4 : undefined;
+const workers = process.env.WORKERS ? parseInt(process.env.WORKERS, 10) : undefined;
 
 /** @type {import('@playwright/test').PlaywrightTestConfig} */
 const config = {

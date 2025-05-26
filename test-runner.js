@@ -20,17 +20,22 @@ args.forEach(arg => {
 });
 
 console.log(`Starting tests with:`, {
-  browser: env.BROWSER || 'chrome',
+  browser: env.BROWSER || 'chromium',
   resolution: env.RESOLUTION || '1280x720',
   headless: env.HEADLESS !== 'false',
   workers: env.WORKERS || 'default'
 });
 
-const playwright = spawn('npx', ['playwright', 'test', ...playwrightArgs], {
+const browser = env.BROWSER || 'chromium';
+const cmd = (browser === 'cucumber')
+  ? ['cucumber-js', ...playwrightArgs]
+  : ['playwright', 'test', ...playwrightArgs];
+
+const runner = spawn('npx', cmd, {
   env,
   stdio: 'inherit'
 });
 
-playwright.on('exit', code => {
+runner.on('exit', code => {
   process.exit(code);
 });

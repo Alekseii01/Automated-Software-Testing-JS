@@ -7,6 +7,8 @@
     "test": "node test-runner.js",
     "test:reports": "npx playwright show-report --port=$(node -e \"const crypto = require('crypto'); console.log(crypto.randomInt(1024, 65535));\") reports",
     "test:cucumber": "cucumber-js",
+    "test:chrome": "node test-runner.js --browser=chromium",
+    "test:firefox": "node test-runner.js --browser=firefox",    
     "test:cucumber:parallel": "cucumber-js",
     "test:cucumber:checkbox": "cucumber-js --profile checkbox",
     "test:cucumber:radioButton": "cucumber-js --profile radioButton",
