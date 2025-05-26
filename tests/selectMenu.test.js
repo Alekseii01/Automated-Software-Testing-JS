@@ -1,6 +1,6 @@
-import { test, expect } from '@playwright/test';
-import { SelectMenuPage } from '../pages/SelectMenuPage';
-import { blockAds } from '../utils/ad-blocker';
+const { test, expect } = require('@playwright/test');
+const { SelectMenuPage } = require('../pages/SelectMenuPage');
+const { blockAds } = require('../utils/ad-blocker');
 
 test('Select dropdown options', async ({ page }) => {
   await blockAds(page);

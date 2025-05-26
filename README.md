@@ -36,27 +36,37 @@ Before running the tests, ensure that the following tools are installed:
 
 ### Running Locally Playwright tests:
 
-To run the tests locally in Chrome and Firefox, use the following command:
+#### Basic Test Execution
+
+To run all tests in both Chrome and Firefox:
 
 ```bash
 npm run test:both
 ```
 
-To run only for a specific one:
+To run tests in a specific browser:
 
 ```bash
 npm run test:chrome
-```
-or
-```bash
 npm run test:firefox
+npm run test:webkit
 ```
 
-To open HTML report run:
+#### Parameterized Test Execution
+
+Run tests with custom browser and resolution parameters:
 
 ```bash
-npm run test:reports
+# Chrome with custom resolution
+npm run test -- --browser=chromium --resolution=1920x1080
+
+# Firefox with custom resolution
+npm run test -- --browser=firefox --resolution=1366x768
+
+# Webkit with custom resolution
+npm run test -- --browser=webkit --resolution=1280x720
 ```
+
 
 ### Running Locally Cucumber tests:
 
@@ -65,11 +75,3 @@ To run the tests locally use the following command:
 ```bash
 npm run test:cucumber
 ```
-## 05 19 Revision
-TODO: 
-* Parallel test execution (parametrize launching t is better to not hardcode configurations in environment files for every test scenario. Instead, use a flexible approach where you can dynamically select the browser, resolution, and other options at runtime via the command line. Whether you run tests in one go or separately depends on your project requirements and the capabilities of your testing framework. for example:  npm run test -- --browser=chrome --resolution=1920x1080 )
-✅ add for BDD scenarios tags 
-* Test Data Separation: Test data is not stored in a separate file or folder. It should be externalized to improve maintainability.
-* Locator Encapsulation: Locators are not fully encapsulated within the page object files. They should not appear in the test files.
-* Encapsulation: Some tests directly interact with web elements instead of using methods from the page object classes. This violates the encapsulation principle of the POM pattern.
-* Parameterized Tests: There is no evidence of parameterized tests with multiple data sets. Tests should include scenarios where the same test is run with different input data.
