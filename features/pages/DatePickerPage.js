@@ -9,6 +9,10 @@ class DatePickerPage {
     await this.page.goto(this.url, { waitUntil: 'load' });
   }
 
+  async getInitialDateValue() {
+    return await this.page.locator(this.dateInput).inputValue();
+  }
+
   async selectDate(dateString) {
     await this.page.click(this.dateInput);
     await this.page.locator(this.dateInput).fill('');
