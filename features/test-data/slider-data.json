@@ -1,0 +1,8 @@
+{
+  "sliderValues": [
+    { "value": 25, "tolerance": 1 },
+    { "value": 50, "tolerance": 1 },
+    { "value": 75, "tolerance": 1 },
+    { "value": 100, "tolerance": 1 }
+  ]
+} 

@@ -36,27 +36,37 @@ Before running the tests, ensure that the following tools are installed:
 
 ### Running Locally Playwright tests:
 
-To run the tests locally in Chrome and Firefox, use the following command:
+#### Basic Test Execution
+
+To run all tests in both Chrome and Firefox:
 
 ```bash
 npm run test:both
 ```
 
-To run only for a specific one:
+To run tests in a specific browser:
 
 ```bash
 npm run test:chrome
-```
-or
-```bash
 npm run test:firefox
+npm run test:webkit
 ```
 
-To open HTML report run:
+#### Parameterized Test Execution
+
+Run tests with custom browser and resolution parameters:
 
 ```bash
-npm run test:reports
+# Chrome with custom resolution
+npm run test -- --browser=chromium --resolution=1920x1080
+
+# Firefox with custom resolution
+npm run test -- --browser=firefox --resolution=1366x768
+
+# Webkit with custom resolution
+npm run test -- --browser=webkit --resolution=1280x720
 ```
+
 
 ### Running Locally Cucumber tests:
 
