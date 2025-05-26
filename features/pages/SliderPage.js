@@ -10,6 +10,21 @@ class SliderPage {
     await this.page.goto(this.url, { waitUntil: 'load' });
   }
 
+  async getSliderPosition() {
+    const slider = await this.page.locator(this.slider);
+    const sliderBoundingBox = await slider.boundingBox();
+    
+    const value = await this.getSliderValue();
+    
+    const sliderWidth = sliderBoundingBox.width;
+    const position = (sliderWidth * value) / 100;
+    
+    return {
+      value,
+      position
+    };
+  }
+
   async moveSliderTo(value) {
     const slider = await this.page.locator(this.slider);
     const sliderBoundingBox = await slider.boundingBox();
