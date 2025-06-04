@@ -10,8 +10,8 @@ on:
     branches:
       - main
       - demoqa-tests
-  schedule:
-    - cron: '50 1 * * *'
+  # schedule:
+  #   - cron: '50 1 * * *'
 
 jobs:
   test:
